@@ -4,26 +4,21 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 import Lottie from "react-lottie";
 import animationData from "../../../public/aboutus2.json";
-import contactData from "../../../public/contact2.json";
 import engineering from "../../../public/images/engg.png";
-import mobilelines from "../../../public/images/icon/mobile-lines.svg";
 import focus from "../../../public/images/focus.png";
 import medical from "../../../public/images/medical.png";
 import gov from "../../../public/images/gov.png";
 import { BsArrowRight } from "react-icons/bs";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
-
 import Footer from "../component/Footer";
 import Image from 'next/image';
 import bgImage2 from '../../../public/images/06.png';
 import bgImage3 from '../../../public/images/07.png';
 import Link from "next/link";
 import Roadmap from "../component/Roadmap";
-import HeroSection from "../component/HeroSection";
-import HeroSection2 from "../component/HeroSection2";
 import HeaderSection from "../component/HeaderSection";
 import FoundationSection from "../component/FoundationSection";
-import AnimatedSvg from "../component/AnimatedSvg";
+
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -116,9 +111,9 @@ export default function Home() {
     </p>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
       {examscategories.map((category, index) => (
-        <Link href={category.link}>
+        <Link key={index} href={category.link}>
         <div
-          key={index}
+          
           className={`rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 ${category.bgColor} ${category.hoverBg}`}
         >
           <img src={category.image} alt={category.title} className="w-full h-96 object-cover" />
